@@ -6,8 +6,9 @@ class Game {
   }
   roll(pins) {
     this.currentFrame.roll(pins);
-    if (this.currentFrame.isComplete) {
+    if (this.currentFrame.isComplete()) {
       const nextFrame = new Frame();
+      this.currentFrame.addNextFrame(nextFrame);
       this.frames.push(this.currentFrame);
       this.currentFrame = nextFrame;
     }

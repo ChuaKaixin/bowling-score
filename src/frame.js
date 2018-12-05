@@ -31,10 +31,13 @@ class Frame {
     } else if (this.isStrike()) {
       let currentScore = this.frameScore + this.nextFrame.getFrameScore();
       if (this.nextFrame.isStrike()) {
-        currentScore += this.nextFrame.getNextFrame()
-          .getIndividualRollScores[0];
+        currentScore += this.nextFrame
+          .getNextFrame()
+          .getIndividualRollScores()[0];
       }
       return currentScore;
+    } else {
+      return this.frameScore;
     }
   }
 
@@ -43,7 +46,7 @@ class Frame {
   }
 
   addNextFrame(frame) {
-    this.nextFrame(frame);
+    this.nextFrame = frame;
   }
 
   isComplete() {
