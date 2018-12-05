@@ -54,9 +54,8 @@ class Frame {
       if (this.frameScore === 10 && this.rolls === 1) return true;
       else return this.rolls === 2;
     } else {
-      if (this.scores[0] === 10 && this.rolls === 3) return true;
-      else if (this.scores[0] + this.scores[1] === 10 && this.rolls === 3)
-        return true;
+      if (this.scores[0] === 10) return this.rolls === 3;
+      else if (this.scores[0] + this.scores[1] === 10) return this.rolls === 3;
       else return this.rolls === 2;
     }
   }

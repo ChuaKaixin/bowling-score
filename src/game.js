@@ -11,6 +11,9 @@ class Game {
       this.currentFrame.addNextFrame(nextFrame);
       this.frames.push(this.currentFrame);
       this.currentFrame = nextFrame;
+      if (this.frames.length === 9) {
+        this.currentFrame.setIsLast(true);
+      }
     }
   }
   score() {

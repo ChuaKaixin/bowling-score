@@ -51,6 +51,7 @@ describe("last frame", () => {
     frame.setIsLast(true);
     frame.roll(5);
     frame.roll(5);
+    frame.roll(1);
     expect(frame.isComplete()).toBeTruthy();
   });
 
